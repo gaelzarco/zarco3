@@ -9,8 +9,6 @@ npm install   // Install all package
 npm run dev   // Open your local host server
 ```
 
-### For WSL2 Ubuntu HotLoad Problems 2 ways to fix
-
 2. Windows OS
 3. Mac
 
