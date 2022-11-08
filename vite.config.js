@@ -3,6 +3,7 @@ import { defineConfig } from "vite"
 
 
 export default defineConfig({
+  base: '/zarco3/',
     server: {
       watch: {
         usePolling: true
