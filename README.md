@@ -1,4 +1,4 @@
-# THREEJS-starter-project-vite
+# Three.js Portfolio
  
 ```javascript
 npm install   // Install all package
