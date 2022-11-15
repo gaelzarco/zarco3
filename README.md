@@ -1,7 +1,5 @@
 # Three.js Portfolio
 
-Website is currently not functional on mobile devices
- 
 ```javascript
 npm install   // Install all package
 ```
