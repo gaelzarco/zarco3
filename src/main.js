@@ -30,7 +30,6 @@ function updateDisplay() {
     document.getElementById('title').remove()
     document.getElementById('intro').remove()
     document.getElementById('nextbttn').remove()
-    display.style.left = '-20%'
 
     let aboutMeTitle = document.createElement('h2')
     aboutMeTitle.setAttribute('id', 'aboutmetitle')
@@ -88,21 +87,7 @@ function updateDisplay() {
     mongoDB.alt = 'MongoDB icon'
 
     let br = document.createElement('br')
-
-    window.removeEventListener('mousemove', updateSphere)
-    
-    const updateSphere2 = (e) => {
-        sphere.position.y = (e.clientY - windowY) * -0.00005
-        sphere.position.x = (e.clientX - windowX) * 0.00005 + 1.5
-    }
-
-    window.addEventListener('mousemove', updateSphere2)
-
-    sphere.position.x = sphere.position.x + 1.5
-    
-    pointLight.position.set(5, 3, 4)
-    pointLight2.position.set(4, 8, -12)
-    pointLight3.position.set(10, -8, -8)
+    br.setAttribute('id', 'oldbr')
 
     display.append(react)
     display.append(python)
@@ -119,21 +104,19 @@ function updateDisplay() {
 
 function updateDisplay2() {
     document.getElementById('nextbttn').remove()
+    document.getElementById('oldbr').remove()
     document.getElementById('myskillstitle').remove()
     document.getElementById('aboutmetitle').remove()
     document.getElementById('aboutme').remove()
     document.querySelectorAll('.skills').forEach(e => e.remove())
-    display.style.left = '0%'
+
+    if (window.innerWidth <= 700) {
+        display.style.marginTop = '165px'
+    }
 
     let homeButton = document.createElement('button')
     homeButton.setAttribute('id', 'nextbttn')
     homeButton.innerText = 'HOME'
-
-    let projectsTitle = document.createElement('h2')
-    projectsTitle.setAttribute('id', 'aboutmetitle')
-    projectsTitle.style.fontSize = '3rem'
-    projectsTitle.innerText = 'Projects'
-    display.append(projectsTitle)
 
     let projectDiv = document.createElement('div')
     projectDiv.setAttribute('class', 'projectDiv')
@@ -175,12 +158,12 @@ function updateDisplay2() {
     projectCDesc.style.paddingBottom = '20px'
     projectCDesc.innerText = 'Final solo-project for the UNLV bootcamp I was a part of. Created using MERN-stack and features cart functionality for the user.'
 
-    let br = document.createElement('br')
-    let br2 = document.createElement('br')
-
     projectDiv.appendChild(projectA)
     projectDiv.appendChild(projectADesc)
     display.append(projectDiv)
+
+    let br = document.createElement('br')
+    let br2 = document.createElement('br')
 
     display.append(br)
 
@@ -202,36 +185,16 @@ function updateDisplay2() {
 // Loading
 const textureLoader = new THREE.TextureLoader()
 
-const normalTexture = textureLoader.load('../static/textures/NormalMap.png')
+const normalTexture = textureLoader.load('NormalMap.png')
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
-const canvas2 = document.querySelector('canvas.webgl2')
 
 // Scene
 const scene = new THREE.Scene()
-const scene2 = new THREE.Scene()
 
 // Objects
 const geometry = new THREE.SphereGeometry(.75, 128, 128)
-
-const segmentCount = 10
-const radius = .05
-const geometry2 = new THREE.BufferGeometry()
-
-const vertices = []
-
-for (var i = 0; i <= segmentCount; i++) {
-    var theta = (i / segmentCount) * Math.PI * 2;
-
-    vertices.push(
-            Math.cos(theta) * radius,
-            Math.sin(theta) * radius,
-            0
-    )  
-}
-
-geometry2.setAttribute('position', new THREE.Float32BufferAttribute( vertices, 3 ))
 
 // Materials
 const material = new THREE.MeshStandardMaterial()
@@ -239,14 +202,9 @@ material.metalness = 1
 material.roughness = 0.2
 material.normalMap = normalTexture
 
-const material2 = new THREE.LineBasicMaterial( { color: 0xffffff } )
-
 // Mesh
 const sphere = new THREE.Mesh(geometry,material)
 scene.add(sphere)
-
-const circle = new THREE.Line(geometry2, material2)
-scene2.add(circle)
 
 // Light 1
 const pointLight = new THREE.PointLight(0xffffff, 0.1)
@@ -286,13 +244,10 @@ window.addEventListener('resize', () =>
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
-    renderer2.setSize(sizes.width, sizes.height)
-    renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
 // Camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000)
 camera.position.x = 0
 camera.position.y = 0
 camera.position.z = 2
@@ -306,29 +261,16 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-const renderer2 = new THREE.WebGLRenderer({
-    canvas: canvas2,
-    alpha: true
-})
-renderer2.setSize(sizes.width, sizes.height)
-renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
 // Animate
 const updateSphere = (e) => {
     sphere.position.y = (e.clientY - windowY) * -0.00005
     sphere.position.x = (e.clientX - windowX) * 0.00005
 }
 
-const updateCircle = (e) => {
-    circle.position.y = (e.clientY - windowY) * -0.00301
-    circle.position.x = (e.clientX - windowX) * 0.00301
-}
-
 window.addEventListener('mousemove', updateSphere)
-window.addEventListener('mousemove', updateCircle)
 
-let windowX = window.innerWidth / 2;
-let windowY = window.innerHeight / 2;
+let windowX = window.innerWidth
+let windowY = window.innerHeight
 
 const clock = new THREE.Clock()
 const tick = () =>
@@ -336,21 +278,16 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     //Update window size
-    windowX = window.innerWidth / 2;
-    windowY = window.innerHeight / 2;
+    windowX = window.innerWidth/2
+    windowY = window.innerHeight/2
 
     // Update objects
-    circle.rotation.z = .5 * elapsedTime
-
     sphere.rotation.y = .12 * elapsedTime
     sphere.rotation.x = .1 * elapsedTime
     sphere.rotation.z = .15 * elapsedTime
 
-    // setSphereScale()
-
     // Render
     renderer.render(scene, camera)
-    renderer2.render(scene2, camera)
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
