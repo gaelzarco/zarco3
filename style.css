@@ -155,10 +155,10 @@ a:hover {
 }
 
 .footer {
+  position: absolute;
   margin-top: 80px;
   height: 40px;
   width: 100%;
-  position: absolute;
   text-align: center;
 }
 
@@ -175,6 +175,10 @@ img:hover {
   @media screen and (max-width: 700px) {
     .container{
       height: 75vh;
+    }
+
+    .display {
+      margin-top: 220px;
     }
 
     a {
@@ -231,7 +235,7 @@ img:hover {
   
     .footer {
       position: absolute;
-      margin-top: -120px;
+      /* padding-bottom: 20px; */
     }
   
     .footer img {

@@ -111,7 +111,7 @@ function updateDisplay2() {
     document.querySelectorAll('.skills').forEach(e => e.remove())
 
     if (window.innerWidth <= 700) {
-        display.style.marginTop = '165px'
+        display.style.marginTop = '195px'
     }
 
     let homeButton = document.createElement('button')
