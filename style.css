@@ -1,21 +1,11 @@
 @font-face {
   font-family: "GT America Extended";
-  src: url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.eot");
-  src: url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.eot?#iefix") format("embedded-opentype"),
-       url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.woff2") format("woff2"),
-       url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.woff") format("woff"),
-       url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.ttf") format("truetype"),
-       url("//db.onlinewebfonts.com/t/879269be836bf8d970d4ef4fb0e54f42.svg#GT America Extended") format("svg");
+  src: url("./fonts/gtamericaextended.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "GT America Extended Bold";
-  src: url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.eot");
-  src: url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.eot?#iefix") format("embedded-opentype"),
-       url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.woff2") format("woff2"),
-       url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.woff") format("woff"),
-       url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.ttf") format("truetype"),
-       url("//db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.svg#GT America Extended Bold") format("svg");
+  src: url("./fonts/gtamericaextendedbold.ttf") format("truetype");
 }
 
 * {
@@ -178,7 +168,7 @@ img:hover {
     }
 
     .display {
-      margin-top: 220px;
+      margin-top: 130px;
     }
 
     .projects {
