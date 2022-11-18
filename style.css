@@ -120,6 +120,7 @@ a:hover {
 .skills {
   height: 75px;
   padding: 15px;
+  animation: fadein 2s;
 }
 
 #nextbttn {
@@ -169,10 +170,6 @@ img:hover {
 
     .display {
       margin-top: 130px;
-    }
-
-    .projects {
-      color: rgb(253, 242, 212)
     }
   
     #intro {
