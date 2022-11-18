@@ -223,7 +223,8 @@ img:hover {
     }
   
     .footer {
-      position: absolute;
+      position: fixed;
+      padding-bottom: 0;
     }
   
     .footer img {
