@@ -43,17 +43,16 @@ a:hover {
 }
 
 .container {
-  height: 80vh;
+  z-index: 1;
+}
+
+.display {
+  height: 100vh;
   width: 100vw;
   display:table-cell;
   text-align: center;
   vertical-align: middle;
   text-align: center;
-  z-index: 1;
-}
-
-.display {
-  margin-top: 180px;
 }
 
 #title {
@@ -146,7 +145,8 @@ a:hover {
 
 .footer {
   position: absolute;
-  margin-top: 80px;
+  bottom: 0;
+  padding-bottom: 25px;
   height: 40px;
   width: 100%;
   text-align: center;
@@ -162,7 +162,7 @@ img:hover {
   height: 45px;
 }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1200px) {
     .container{
       height: 75vh;
     }
@@ -188,7 +188,6 @@ img:hover {
     }
   
     #aboutmetitle {
-      margin-top: -140px;
       font-size: 16px;
     }
   

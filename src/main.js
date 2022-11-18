@@ -110,10 +110,6 @@ function updateDisplay2() {
     document.getElementById('aboutme').remove()
     document.querySelectorAll('.skills').forEach(e => e.remove())
 
-    if (window.innerWidth <= 700) {
-        display.style.marginTop = '195px'
-    }
-
     let homeButton = document.createElement('button')
     homeButton.setAttribute('id', 'nextbttn')
     homeButton.innerText = 'HOME'
