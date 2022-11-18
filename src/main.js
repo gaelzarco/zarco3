@@ -38,7 +38,7 @@ function updateDisplay() {
 
     let aboutMe = document.createElement('p')
     aboutMe.setAttribute('id', 'aboutme')
-    aboutMe.innerText = "Welcome to my portfolio, I am a recent Software Development bootcamp graduate from UNLV and I have been programming for over a year now. I love working on front-end projects, including UI/UX, but am profecient and experienced at creating full-stack web applications, back-end servers, and API's. Beyond JavaScript, CSS, and HTML, I am familiar with Python and some of its web development frameworks such as Flask. Having worked 3 years of food service, it is easy to say that a full-stack app and a restaurant are not as different as they may seem."
+    aboutMe.innerText = "Welcome to my portfolio, I am a recent Software Development bootcamp graduate from UNLV and I have been programming for over a year now. I love working on front-end projects, including UI/UX, but am profecient and experienced at creating full-stack web applications, back-end servers, and RESTful API's. Beyond JavaScript, CSS, and HTML, I am familiar with Python and some of its web development frameworks such as Flask. Having worked 3 years of food service, it is easy to say that a full-stack app and a restaurant are not as different as they may seem."
     display.append(aboutMe)
 
     let mySkillsTitle = document.createElement('h2')
@@ -123,7 +123,7 @@ function updateDisplay2() {
     projectA.setAttribute('target', '_blank')
     projectA.innerText = 'Audix' 
 
-    let projectADesc = document.createElement('h2')
+    let projectADesc = document.createElement('p')
     projectADesc.setAttribute('class', 'projectdesc')
     projectADesc.innerText = 'This a solo-project of mine meant to replicate Receiptify with a few more features. Built with React and a Python/Flask backend.'
 
@@ -132,13 +132,13 @@ function updateDisplay2() {
 
     let projectB = document.createElement('a')
     projectB.setAttribute('class', 'projects')
-    projectB.setAttribute('href', 'https://github.com/gaelzarco/MadlibMadness')
+    projectB.setAttribute('href', 'https://gaelzarco.github.io/SpaceShooter/')
     projectB.setAttribute('target', '_blank')
-    projectB.innerText = 'MadLib Madness' 
+    projectB.innerText = 'Space Shooter' 
 
-    let projectBDesc = document.createElement('h2')
+    let projectBDesc = document.createElement('p')
     projectBDesc.setAttribute('class', 'projectdesc')
-    projectBDesc.innerText = 'A group project intended for users to create and play their own madlibs. Due to time constraints, the project is unfinished. I handled most of the front-end JavaScript development built on React.js.'
+    projectBDesc.innerText = 'The first milestone project in my coding journey. A 2-D vanilla JavaScript shooter for devices with keyboards.'
 
     let projectDiv3 = document.createElement('div')
     projectDiv3.setAttribute('class', 'projectDiv')
@@ -149,10 +149,10 @@ function updateDisplay2() {
     projectC.setAttribute('target', '_blank')
     projectC.innerText = 'Mock E-Commerce' 
 
-    let projectCDesc = document.createElement('h2')
+    let projectCDesc = document.createElement('p')
     projectCDesc.setAttribute('class', 'projectdesc')
     projectCDesc.style.paddingBottom = '20px'
-    projectCDesc.innerText = 'Final solo-project for the UNLV bootcamp I was a part of. Created using MERN-stack and features cart functionality for the user.'
+    projectCDesc.innerText = 'Final milestone project for the UNLV bootcamp I attended. Created using MERN-stack and features cart functionality for the user.'
 
     projectDiv.appendChild(projectA)
     projectDiv.appendChild(projectADesc)
