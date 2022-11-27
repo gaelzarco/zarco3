@@ -119,13 +119,13 @@ function updateDisplay2() {
 
     let projectA = document.createElement('a')
     projectA.setAttribute('class', 'projects')
-    projectA.setAttribute('href', 'https://audix.up.railway.app/')
+    projectA.setAttribute('href', 'https://github.com/gaelzarco/audix')
     projectA.setAttribute('target', '_blank')
     projectA.innerText = 'Audix' 
 
     let projectADesc = document.createElement('p')
     projectADesc.setAttribute('class', 'projectdesc')
-    projectADesc.innerText = 'This a solo-project of mine meant to replicate Receiptify with a few more features. Built with React and a Express/Nodejs backend. Originally used a Python/Flask server but compatibility issues made me switch. Code to both is available on GitHub repo.'
+    projectADesc.innerText = 'This a solo-project of mine meant to replicate Receiptify with a few more features. Built with React and a Express backend. Spotify denied quota extension so demo account is provided in the description of the linked GitHub repo.'
 
     let projectDiv2 = document.createElement('div')
     projectDiv2.setAttribute('class', 'projectDiv')
@@ -145,14 +145,14 @@ function updateDisplay2() {
 
     let projectC = document.createElement('a')
     projectC.setAttribute('class', 'projects')
-    projectC.setAttribute('href', 'https://github.com/gaelzarco/UNLV-SD-FINAL')
+    projectC.setAttribute('href', 'https://github.com/gaelzarco/nextjs-sanity-ecommerce')
     projectC.setAttribute('target', '_blank')
     projectC.innerText = 'Mock E-Commerce' 
 
     let projectCDesc = document.createElement('p')
     projectCDesc.setAttribute('class', 'projectdesc')
     projectCDesc.style.paddingBottom = '20px'
-    projectCDesc.innerText = 'Final milestone project for the UNLV bootcamp I attended. Created using MERN-stack and features cart functionality for the user.'
+    projectCDesc.innerText = 'Ecommerce website built with NextJS, Sanity, and features Stripe payment integration.'  
 
     projectDiv.appendChild(projectA)
     projectDiv.appendChild(projectADesc)
